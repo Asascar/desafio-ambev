@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Common;
 
@@ -8,6 +8,7 @@ public class PaginatedList<T> : List<T>
     public int TotalPages { get; private set; }
     public int PageSize { get; private set; }
     public int TotalCount { get; private set; }
+    public int TotalItems => TotalCount;
 
     public bool HasPrevious => CurrentPage > 1;
     public bool HasNext => CurrentPage < TotalPages;
